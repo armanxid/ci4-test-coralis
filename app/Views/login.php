@@ -17,7 +17,7 @@
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Web CI 4 Test</title>
 </head>
 
 <body>
@@ -31,6 +31,15 @@
                             <div class="mb-md-5 mt-md-4 pb-5">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                <?php if (session()->has('errors')) : ?>
+                                    <div>
+                                        <ul>
+                                            <?php foreach (session('errors') as $error) : ?>
+                                                <li><?= $error ?></li>
+                                            <?php endforeach ?>
+                                        </ul>
+                                    </div>
+                                <?php endif ?>
                                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
                                 <form action="/login" method="post">
                                     <div class="form-outline form-white mb-4">
@@ -43,7 +52,7 @@
                                         <label class="form-label" for="password"></label>
                                     </div>
 
-                                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="<?= url_to('forgot_password_page') ?>">Forgot password?</a></p>
 
                                     <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
                                 </form>

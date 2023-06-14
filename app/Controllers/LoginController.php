@@ -29,7 +29,7 @@ class LoginController extends BaseController
         $user = $userModel->where('email', $this->request->getPost('email'))->first();
 
         if (!$user || !password_verify($this->request->getPost('password'), $user['password'])) {
-            return redirect()->back()->withInput()->with('error', 'Invalid email or password');
+            return redirect()->to(current_url())->withInput()->with('error', 'Invalid email or password');
         }
 
         // Store user data in session

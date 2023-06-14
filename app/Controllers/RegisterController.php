@@ -20,6 +20,7 @@ class RegisterController extends BaseController
             'name' => 'required',
             'email' => 'required|valid_email|is_unique[users.email]',
             'password' => 'required|min_length[6]',
+            'repeat_password' => 'required|matches[password]',
             'profile_picture' => 'uploaded[profile_picture]|max_size[profile_picture,1024]|is_image[profile_picture]'
         ];
 
