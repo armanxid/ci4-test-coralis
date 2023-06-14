@@ -32,7 +32,7 @@
                             <div class="mb-md-5 mt-md-4 pb-5">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Forgot Password</h2>
-                                <p class="text-white-50 mb-5">Please enter an email, name and password for your account!</p>
+                                <p class="text-white-50 mb-5">Please enter an email that you've created!</p>
                                 <?php if (session()->getFlashdata('success')) : ?>
                                     <div><?= session()->getFlashdata('success') ?></div>
                                 <?php endif ?>
